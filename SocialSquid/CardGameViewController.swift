@@ -18,7 +18,11 @@ class CardGameViewController: UIViewController {
     
     @IBOutlet weak var rightScoreLabel: UILabel!
     
-
+    lazy var drawAlert: DrawAlert = {
+        DrawAlert()
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -27,18 +31,18 @@ class CardGameViewController: UIViewController {
     @IBAction func dealTapped(_ sender: Any) {
         
         //random cards
-//        let playerNumber = Int.random(in: 2...14)
-//        let cpuNumber = Int.random(in: 2...14)
+        //        let playerNumber = Int.random(in: 2...14)
+        //        let cpuNumber = Int.random(in: 2...14)
         
         
         // mocando o valor temporariamente pra drawn
         let playerNumber = 2
         let cpuNumber = 2
-             
+        
         // imageviews update
         leftImageView.image = UIImage(named: "card\(playerNumber)")
         rightImageView.image = UIImage(named: "card\(cpuNumber)")
-
+        
         if playerNumber > cpuNumber {
             
             // tratando optional
@@ -47,45 +51,56 @@ class CardGameViewController: UIViewController {
             }
             var scorePlayerIncremented = Int(playerScore) ?? 0
             scorePlayerIncremented += 1
-                // atualizando a tela de pts
+            // atualizando a tela de pts
             leftScoreLabel.text = String(scorePlayerIncremented)
             print("Player Win", playerNumber)
             
         } else if playerNumber == cpuNumber {
             
-            // criando alerta de empate
-            let drawnAlert = UIAlertController(title: "Draw", message: nil, preferredStyle: .alert)
-            // mostrando alert
-            self.present(drawnAlert, animated: true, completion: nil)
+            self.view.addSubview(drawAlert)
+            drawAlert.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
             
-            // time do alert
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.8) {
-                drawnAlert.dismiss(animated: true, completion: nil)
+//                self.view.centerYAnchor.constraint(equalTo: drawAlert.centerYAnchor, constant: 0),
+                self.view.bottomAnchor.constraint(equalTo: drawAlert.bottomAnchor, constant: 200),
+                self.view.centerXAnchor.constraint(equalTo: drawAlert.centerXAnchor, constant: 0)
+//                drawAlert.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 300),
+//                drawAlert.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
+                
+            ])
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) { [weak self] in
+                self?.drawAlert.removeFromSuperview()
             }
-                    
-            print("Draw!")
-        }  else {
+            
+        } else {
             guard let cpuScore = rightScoreLabel.text else {
                 return
             }
             var scoreCPUIncremented = Int(cpuScore) ?? 0
             scoreCPUIncremented += 1
-                // atualizando a tela de pts
+            // atualizando a tela de pts
             rightScoreLabel.text = String(scoreCPUIncremented)
             print("CPU Win", cpuNumber)
             
         }
     }
-    
-    
-    
-    
 }
-/* fazer um guarlet para tratar o optional e nao matae gatin :c
-   atribuir um alert quando der empate
+
+
+
+/*
+ TODO:
+ 
+ fazer um guarlet para tratar o optional e nao matae gatin :c [ OK ]
+ atribuir um alert quando der empate [ OK ]
+ 
+ Customizar o alert com tamanho e talvez, e ver se dá p por constraints nele
+ 
+ REFATORAR O CODIGO PRA FUNÇÃO E NAO FICAR ESSA PAPAGAIADA QUE ESTÁ DE BAGUNÇA SEU LIXO
  
  Next:
  
  Navigation and Storyboard reference Main to CardGame
  Integration API
-*/
+ */
