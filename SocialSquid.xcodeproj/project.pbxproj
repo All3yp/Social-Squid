@@ -17,6 +17,7 @@
 		CECAD6942482026E00E1C1F0 /* CardGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD6932482026E00E1C1F0 /* CardGameViewController.swift */; };
 		CECAD69A24844DF500E1C1F0 /* DrawAlert.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECAD69924844DF500E1C1F0 /* DrawAlert.xib */; };
 		CECAD69C248450C200E1C1F0 /* DrawAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD69B248450C200E1C1F0 /* DrawAlert.swift */; };
+		CECAD69E2484A7DC00E1C1F0 /* CardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD69D2484A7DC00E1C1F0 /* CardGameView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CECAD6932482026E00E1C1F0 /* CardGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameViewController.swift; sourceTree = "<group>"; };
 		CECAD69924844DF500E1C1F0 /* DrawAlert.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrawAlert.xib; sourceTree = "<group>"; };
 		CECAD69B248450C200E1C1F0 /* DrawAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawAlert.swift; sourceTree = "<group>"; };
+		CECAD69D2484A7DC00E1C1F0 /* CardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				CECAD67F247F595400E1C1F0 /* SceneDelegate.swift */,
 				CECAD681247F595400E1C1F0 /* ViewController.swift */,
 				CECAD6932482026E00E1C1F0 /* CardGameViewController.swift */,
+				CECAD69D2484A7DC00E1C1F0 /* CardGameView.swift */,
 				CECAD69924844DF500E1C1F0 /* DrawAlert.xib */,
 				CECAD69B248450C200E1C1F0 /* DrawAlert.swift */,
 				CECAD683247F595400E1C1F0 /* Main.storyboard */,
@@ -157,6 +160,7 @@
 				CECAD682247F595400E1C1F0 /* ViewController.swift in Sources */,
 				CECAD67E247F595400E1C1F0 /* AppDelegate.swift in Sources */,
 				CECAD680247F595400E1C1F0 /* SceneDelegate.swift in Sources */,
+				CECAD69E2484A7DC00E1C1F0 /* CardGameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

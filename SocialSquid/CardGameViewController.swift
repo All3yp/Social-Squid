@@ -9,80 +9,77 @@
 import UIKit
 
 class CardGameViewController: UIViewController {
-    
-    @IBOutlet weak var leftImageView: UIImageView!
-    
-    @IBOutlet weak var rightImageView: UIImageView!
-    
-    @IBOutlet weak var leftScoreLabel: UILabel!
-    
-    @IBOutlet weak var rightScoreLabel: UILabel!
-    
+
     lazy var drawAlert: DrawAlert = {
         DrawAlert()
     }()
     
+    var cardGameView: CardGameView {
+        self.view as! CardGameView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    func incresePlayerScore() {
+        guard let playerScore = cardGameView.leftScoreLabel.text else {
+            return
+        }
+        var scorePlayerIncremented = Int(playerScore) ?? 0
+        scorePlayerIncremented += 1
+        // atualizando a tela de pts
+        cardGameView.leftScoreLabel.text = String(scorePlayerIncremented)
+        print("Player Win", playerScore)
+    }
+    
+    func drawnPlayers() {
+        self.view.addSubview(drawAlert)
+        drawAlert.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            
+            self.view.bottomAnchor.constraint(equalTo: drawAlert.bottomAnchor, constant: 200),
+            self.view.centerXAnchor.constraint(equalTo: drawAlert.centerXAnchor, constant: 0)
+        ])
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) { [weak self] in
+            self?.drawAlert.removeFromSuperview()
+        }
+    }
+    
+    func increseCPUscore() {
+        guard let cpuScore = cardGameView.rightScoreLabel.text else {
+            return
+        }
+        var scoreCPUIncremented = Int(cpuScore) ?? 0
+        scoreCPUIncremented += 1
+        // atualizando a tela de pts
+        cardGameView.rightScoreLabel.text = String(scoreCPUIncremented)
+        print("CPU Win", cpuScore)
+    }
     
     @IBAction func dealTapped(_ sender: Any) {
         
         //random cards
-        //        let playerNumber = Int.random(in: 2...14)
-        //        let cpuNumber = Int.random(in: 2...14)
+        let playerNumber = Int.random(in: 2...14)
+        let cpuNumber = Int.random(in: 2...14)
         
         
-        // mocando o valor temporariamente pra drawn
-        let playerNumber = 2
-        let cpuNumber = 2
+    /*  mocando o valor temporariamente pra drawn
+                let playerNumber = 2
+                let cpuNumber = 2   */
         
         // imageviews update
-        leftImageView.image = UIImage(named: "card\(playerNumber)")
-        rightImageView.image = UIImage(named: "card\(cpuNumber)")
+        cardGameView.leftImageView.image = UIImage(named: "card\(playerNumber)")
+        cardGameView.rightImageView.image = UIImage(named: "card\(cpuNumber)")
+        
         
         if playerNumber > cpuNumber {
-            
-            // tratando optional
-            guard let playerScore = leftScoreLabel.text else {
-                return
-            }
-            var scorePlayerIncremented = Int(playerScore) ?? 0
-            scorePlayerIncremented += 1
-            // atualizando a tela de pts
-            leftScoreLabel.text = String(scorePlayerIncremented)
-            print("Player Win", playerNumber)
-            
+            incresePlayerScore()
         } else if playerNumber == cpuNumber {
-            
-            self.view.addSubview(drawAlert)
-            drawAlert.translatesAutoresizingMaskIntoConstraints = false
-            NSLayoutConstraint.activate([
-            
-//                self.view.centerYAnchor.constraint(equalTo: drawAlert.centerYAnchor, constant: 0),
-                self.view.bottomAnchor.constraint(equalTo: drawAlert.bottomAnchor, constant: 200),
-                self.view.centerXAnchor.constraint(equalTo: drawAlert.centerXAnchor, constant: 0)
-//                drawAlert.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 300),
-//                drawAlert.bottomAnchor.constraint(equalTo: self.view.bottomAnchor)
-                
-            ])
-            
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.7) { [weak self] in
-                self?.drawAlert.removeFromSuperview()
-            }
-            
+            drawnPlayers()
         } else {
-            guard let cpuScore = rightScoreLabel.text else {
-                return
-            }
-            var scoreCPUIncremented = Int(cpuScore) ?? 0
-            scoreCPUIncremented += 1
-            // atualizando a tela de pts
-            rightScoreLabel.text = String(scoreCPUIncremented)
-            print("CPU Win", cpuNumber)
-            
+            increseCPUscore()
         }
     }
 }
@@ -95,9 +92,11 @@ class CardGameViewController: UIViewController {
  fazer um guarlet para tratar o optional e nao matae gatin :c [ OK ]
  atribuir um alert quando der empate [ OK ]
  
- Customizar o alert com tamanho e talvez, e ver se dá p por constraints nele
+ Customizar o alert com tamanho e talvez, e ver se dá p por constraints nele [COLOQUEI XIB]
  
- REFATORAR O CODIGO PRA FUNÇÃO E NAO FICAR ESSA PAPAGAIADA QUE ESTÁ DE BAGUNÇA SEU LIXO
+ setar para o jogo não ser infinito , quando um dos jogadores atingirem 50 pontos, mostra quem ganhou o jogo e reinicia
+ 
+ REFATORAR O CODIGO PRA FUNÇÃO E NAO FICAR ESSA PAPAGAIADA QUE ESTÁ DE BAGUNÇA SEU LIXO []
  
  Next:
  

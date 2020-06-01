@@ -11,7 +11,7 @@
         <scene sceneID="gax-9T-BLp">
             <objects>
                 <viewController id="thZ-zy-L4d" customClass="CardGameViewController" customModule="SocialSquid" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="X9a-yF-DOv">
+                    <view key="view" contentMode="scaleToFill" id="X9a-yF-DOv" customClass="CardGameView" customModule="SocialSquid" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -95,20 +95,24 @@
                             <constraint firstAttribute="trailing" secondItem="PRu-xe-ZOf" secondAttribute="trailing" id="FcN-qd-e5f"/>
                             <constraint firstAttribute="bottom" secondItem="PRu-xe-ZOf" secondAttribute="bottom" id="Lrc-J5-20i"/>
                             <constraint firstItem="wsm-a7-1gV" firstAttribute="trailing" secondItem="aR1-ur-g9h" secondAttribute="trailing" constant="20" id="PtJ-7r-Ghy"/>
+                            <constraint firstAttribute="bottom" secondItem="PRu-xe-ZOf" secondAttribute="bottom" id="fAT-p1-lhd"/>
                             <constraint firstItem="snK-lI-t3X" firstAttribute="top" secondItem="wsm-a7-1gV" secondAttribute="top" constant="10" id="kWI-WR-XSk"/>
+                            <constraint firstItem="PRu-xe-ZOf" firstAttribute="top" secondItem="X9a-yF-DOv" secondAttribute="top" id="kao-aW-VIk"/>
                             <constraint firstItem="wsm-a7-1gV" firstAttribute="bottom" secondItem="KZU-JY-Ghb" secondAttribute="bottom" constant="20" id="mrs-Sg-YZA"/>
                             <constraint firstItem="KZU-JY-Ghb" firstAttribute="leading" secondItem="wsm-a7-1gV" secondAttribute="leading" constant="20" id="nNe-ct-YiF"/>
+                            <constraint firstItem="PRu-xe-ZOf" firstAttribute="leading" secondItem="wsm-a7-1gV" secondAttribute="leading" id="qyi-DJ-Kz4"/>
                             <constraint firstItem="PRu-xe-ZOf" firstAttribute="top" secondItem="X9a-yF-DOv" secondAttribute="top" id="swF-0B-NGh"/>
+                            <constraint firstItem="PRu-xe-ZOf" firstAttribute="trailing" secondItem="wsm-a7-1gV" secondAttribute="trailing" id="wtk-Ac-KQV"/>
                             <constraint firstItem="PRu-xe-ZOf" firstAttribute="leading" secondItem="X9a-yF-DOv" secondAttribute="leading" id="xBh-jp-bvT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wsm-a7-1gV"/>
+                        <connections>
+                            <outlet property="leftImageView" destination="alT-Rc-dvA" id="099-5A-uZd"/>
+                            <outlet property="leftScoreLabel" destination="KZj-IX-QfQ" id="RMM-df-1Zi"/>
+                            <outlet property="rightImageView" destination="wZW-MK-X3o" id="8tt-Td-jAr"/>
+                            <outlet property="rightScoreLabel" destination="IhA-53-2sq" id="yeM-Kl-ylZ"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="leftImageView" destination="alT-Rc-dvA" id="CwU-mB-ldi"/>
-                        <outlet property="leftScoreLabel" destination="KZj-IX-QfQ" id="ImW-U9-6ZC"/>
-                        <outlet property="rightImageView" destination="wZW-MK-X3o" id="TYK-aQ-5RI"/>
-                        <outlet property="rightScoreLabel" destination="IhA-53-2sq" id="aSs-W5-Jzb"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VQ-CT-HJI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
