@@ -30,7 +30,13 @@ class CardGameViewController: UIViewController {
         scorePlayerIncremented += 1
         // atualizando a tela de pts
         cardGameView.leftScoreLabel.text = String(scorePlayerIncremented)
-        print("Player Win", playerScore)
+//        print("Player Win", playerScore)
+        if scorePlayerIncremented == 10 {
+            print("Player ganhou ", scorePlayerIncremented)
+            cardGameView.leftScoreLabel.text = "0"
+            cardGameView.rightScoreLabel.text = "0"
+        }
+                
     }
     
     func drawnPlayers() {
@@ -55,7 +61,12 @@ class CardGameViewController: UIViewController {
         scoreCPUIncremented += 1
         // atualizando a tela de pts
         cardGameView.rightScoreLabel.text = String(scoreCPUIncremented)
-        print("CPU Win", cpuScore)
+//        print("CPU Win", cpuScore)
+        if scoreCPUIncremented == 10 {
+            print("CPU Win", scoreCPUIncremented)
+            cardGameView.rightScoreLabel.text = "0"
+            cardGameView.leftScoreLabel.text = "0"
+        }
     }
     
     @IBAction func dealTapped(_ sender: Any) {
@@ -73,7 +84,6 @@ class CardGameViewController: UIViewController {
         cardGameView.leftImageView.image = UIImage(named: "card\(playerNumber)")
         cardGameView.rightImageView.image = UIImage(named: "card\(cpuNumber)")
         
-        
         if playerNumber > cpuNumber {
             incresePlayerScore()
         } else if playerNumber == cpuNumber {
@@ -81,6 +91,8 @@ class CardGameViewController: UIViewController {
         } else {
             increseCPUscore()
         }
+        
+    
     }
 }
 
@@ -96,7 +108,7 @@ class CardGameViewController: UIViewController {
  
  setar para o jogo não ser infinito , quando um dos jogadores atingirem 50 pontos, mostra quem ganhou o jogo e reinicia
  
- REFATORAR O CODIGO PRA FUNÇÃO E NAO FICAR ESSA PAPAGAIADA QUE ESTÁ DE BAGUNÇA SEU LIXO []
+ REFATORAR O CODIGO PRA FUNÇÃO E NAO FICAR ESSA PAPAGAIADA QUE ESTÁ DE BAGUNÇA SEU LIXO [1,]
  
  Next:
  

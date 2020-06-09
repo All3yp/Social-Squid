@@ -18,5 +18,5 @@ import UIKit
     
     @IBOutlet weak var rightScoreLabel: UILabel!
     
-
+    
 }
