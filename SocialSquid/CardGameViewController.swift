@@ -32,9 +32,18 @@ class CardGameViewController: UIViewController {
         cardGameView.leftScoreLabel.text = String(scorePlayerIncremented)
 //        print("Player Win", playerScore)
         if scorePlayerIncremented == 10 {
-            print("Player ganhou ", scorePlayerIncremented)
+//            print("Player ganhou ", scorePlayerIncremented)
             cardGameView.leftScoreLabel.text = "0"
             cardGameView.rightScoreLabel.text = "0"
+            let alert = UIAlertController(title: "Player Win", message: "", preferredStyle: .alert)
+            alert.view.backgroundColor = .systemYellow
+            alert.view.layer.cornerRadius = 13
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                alert.dismiss(animated: true, completion: nil)
+            }
+
+            
+            self.present(alert, animated: true, completion: nil)
         }
                 
     }
@@ -63,9 +72,18 @@ class CardGameViewController: UIViewController {
         cardGameView.rightScoreLabel.text = String(scoreCPUIncremented)
 //        print("CPU Win", cpuScore)
         if scoreCPUIncremented == 10 {
-            print("CPU Win", scoreCPUIncremented)
+//            print("CPU Win", scoreCPUIncremented)
             cardGameView.rightScoreLabel.text = "0"
             cardGameView.leftScoreLabel.text = "0"
+            let alert = UIAlertController(title: "CPU Win", message: "", preferredStyle: .alert)
+            alert.view.backgroundColor = .systemYellow
+            alert.view.layer.cornerRadius = 13
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.2) {
+                alert.dismiss(animated: true, completion: nil)
+            }
+
+            
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
