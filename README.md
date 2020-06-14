@@ -1,7 +1,6 @@
 ## Social Squid Card Game ♠️
 
 
-O Social Squid é um card game, as pontuações se dão de qual carta possui maior pontuação (como um joquenpô).
 The Social Squid is a card game, the scores are given from which card has the highest score.
 
 
