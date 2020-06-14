@@ -115,21 +115,3 @@ class CardGameViewController: UIViewController {
 }
 
 
-
-/*
- TODO:
- 
- fazer um guarlet para tratar o optional e nao matae gatin :c [ OK ]
- atribuir um alert quando der empate [ OK ]
- 
- Customizar o alert com tamanho e talvez, e ver se dá p por constraints nele [COLOQUEI XIB]
- 
- setar para o jogo não ser infinito , quando um dos jogadores atingirem 50 pontos, mostra quem ganhou o jogo e reinicia
- 
- REFATORAR O CODIGO PRA FUNÇÃO E NAO FICAR ESSA PAPAGAIADA QUE ESTÁ DE BAGUNÇA SEU LIXO [1,]
- 
- Next:
- 
- Navigation and Storyboard reference Main to CardGame
- Integration API
- */

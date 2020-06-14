@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67F10707E74FCB664FB7868C /* Pods_SocialSquid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50BA8FAA11C105AC478DE623 /* Pods_SocialSquid.framework */; };
 		CECAD67E247F595400E1C1F0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD67D247F595400E1C1F0 /* AppDelegate.swift */; };
 		CECAD680247F595400E1C1F0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD67F247F595400E1C1F0 /* SceneDelegate.swift */; };
 		CECAD682247F595400E1C1F0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAD681247F595400E1C1F0 /* ViewController.swift */; };
@@ -21,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20C1E4A8E25BCFF3FCE1FFD0 /* Pods-SocialSquid.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSquid.release.xcconfig"; path = "Target Support Files/Pods-SocialSquid/Pods-SocialSquid.release.xcconfig"; sourceTree = "<group>"; };
+		50BA8FAA11C105AC478DE623 /* Pods_SocialSquid.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSquid.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E0E15AABC9185A05CBD101 /* Pods-SocialSquid.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSquid.debug.xcconfig"; path = "Target Support Files/Pods-SocialSquid/Pods-SocialSquid.debug.xcconfig"; sourceTree = "<group>"; };
 		CECAD67A247F595400E1C1F0 /* SocialSquid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSquid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CECAD67D247F595400E1C1F0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CECAD67F247F595400E1C1F0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F10707E74FCB664FB7868C /* Pods_SocialSquid.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E4F24EE42C53633D3DE01ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50BA8FAA11C105AC478DE623 /* Pods_SocialSquid.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CECAD671247F595400E1C1F0 = {
 			isa = PBXGroup;
 			children = (
 				CECAD67C247F595400E1C1F0 /* SocialSquid */,
 				CECAD67B247F595400E1C1F0 /* Products */,
+				E0D60B0EB3E20F3544E83544 /* Pods */,
+				3E4F24EE42C53633D3DE01ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +97,15 @@
 			path = SocialSquid;
 			sourceTree = "<group>";
 		};
+		E0D60B0EB3E20F3544E83544 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93E0E15AABC9185A05CBD101 /* Pods-SocialSquid.debug.xcconfig */,
+				20C1E4A8E25BCFF3FCE1FFD0 /* Pods-SocialSquid.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -89,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CECAD68E247F595600E1C1F0 /* Build configuration list for PBXNativeTarget "SocialSquid" */;
 			buildPhases = (
+				1531F57A327B8F7EDA3FE6E1 /* [CP] Check Pods Manifest.lock */,
 				CECAD676247F595400E1C1F0 /* Sources */,
 				CECAD677247F595400E1C1F0 /* Frameworks */,
 				CECAD678247F595400E1C1F0 /* Resources */,
+				FF79BB6CC85350E206163387 /* [CP] Embed Pods Frameworks */,
+				56D54BFBA3F2D11209540FA3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,6 +176,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1531F57A327B8F7EDA3FE6E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialSquid-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56D54BFBA3F2D11209540FA3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialSquid/Pods-SocialSquid-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialSquid/Pods-SocialSquid-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialSquid/Pods-SocialSquid-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF79BB6CC85350E206163387 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialSquid/Pods-SocialSquid-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SocialSquid/Pods-SocialSquid-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SocialSquid/Pods-SocialSquid-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CECAD676247F595400E1C1F0 /* Sources */ = {
@@ -302,6 +388,7 @@
 		};
 		CECAD68F247F595600E1C1F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93E0E15AABC9185A05CBD101 /* Pods-SocialSquid.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -319,6 +406,7 @@
 		};
 		CECAD690247F595600E1C1F0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20C1E4A8E25BCFF3FCE1FFD0 /* Pods-SocialSquid.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
